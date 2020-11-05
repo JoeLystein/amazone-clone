@@ -9,6 +9,7 @@ import { useStateValue } from "./StateProvider";
 function Header() {
 
     const [{basket},dispatch]=useStateValue(); 
+    console.log(basket);
     return ( <nav className="header">
         <Link to="/">
             <img className="header_logo" src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" alt=""/>
@@ -23,7 +24,7 @@ function Header() {
         <div className="header__nav">
             <Link to="/login" className="header__link">
                 <div className="header__option">
-                    <span className="header__optionLineOne">Hello Qazi</span>
+                    <span className="header__optionLineOne">Hello Joel</span>
                     <span className="header__optionLineTwo">Sign In</span>
                 </div>
             </Link>
@@ -51,7 +52,7 @@ function Header() {
         <Link to="/checkout" className="header__link">
             <div className="header_optionBasket">
                 <ShoppingBasketIcon/>
-                <span className="header__optionLineTwo header__basketCount">{basket.length}</span>
+                <span className="header__optionLineTwo header__basketCount">{basket?.length}</span>
             </div>
         </Link>
 
